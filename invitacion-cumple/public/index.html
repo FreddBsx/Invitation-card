@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbe4e8">
+  <meta name="description" content="Madeleine y Katerin te invitan a celebrar su cumpleaños.">
+  <title>Madeleine y Katerin te invitan</title>
+  <link rel="stylesheet" href="./styles.css?v=13">
+  <script src="./app.js?v=12" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="invite" aria-labelledby="invite-title">
+      <header class="hero">
+        <div class="hero-cake">
+          <img src="./assets/pastel-coquette.png" alt="Pastel de cumpleaños decorado con cerezas y lazos" width="180" height="240">
+        </div>
+        <p class="hero-script" id="hero-names">Madeleine y Katerin</p>
+        <h1 id="invite-title">te invitamos a<br><span>celebrar</span></h1>
+        <div class="bow-divider" aria-hidden="true"><span></span><b>♥</b><span></span></div>
+      </header>
+
+      <section class="event-facts" aria-label="Fecha y hora">
+        <div class="fact">
+          <span class="fact-icon" aria-hidden="true">♡</span>
+          <div><p class="small-label">FECHA</p><p id="event-date" class="fact-value">Sábado, 21 de noviembre</p></div>
+        </div>
+        <div class="fact">
+          <span class="fact-icon clock-icon" aria-hidden="true">◷</span>
+          <div><p class="small-label">HORA</p><p id="event-time" class="fact-value">9:00 p. m.</p></div>
+        </div>
+      </section>
+
+      <section class="map-section" aria-labelledby="map-heading">
+        <div class="section-heading">
+          <div><p class="small-label">UBICACIÓN</p><h2 id="map-heading">Te esperamos en casa</h2></div>
+          <span class="map-hint">Toca el mapa para ampliarlo</span>
+        </div>
+        <div class="map-card" id="map-card">
+          <div class="map-preview">
+            <iframe id="map-preview-frame" title="Vista previa de la ubicación" src="https://maps.google.com/maps?q=-11.828626%2C-77.082218&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1" aria-hidden="true"></iframe>
+            <button class="map-preview-toggle" id="map-preview-toggle" type="button" aria-label="Ampliar la vista del mapa" aria-expanded="false" aria-controls="map-expanded"></button>
+          </div>
+          <button class="map-toggle" id="map-toggle" type="button" aria-expanded="false" aria-controls="map-expanded">
+            <span class="map-summary"><span class="map-pin-small" aria-hidden="true">♡</span><span><strong id="map-venue">Mi Lindo Hogar</strong><small id="map-address">Nuestra casa · Madeleine y Katerin</small></span><span class="expand-mark" aria-hidden="true">⌄</span></span>
+          </button>
+          <div class="map-expanded" id="map-expanded" hidden>
+            <p class="map-empty" id="map-empty" hidden>La vista del mapa no está disponible. Puedes abrir la ubicación directamente en Google Maps.</p>
+            <a class="maps-link" id="maps-link" href="https://goo.gl/maps/bPtQDoksqghj5JW5A?g_st=aw" target="_blank" rel="noopener noreferrer">Abrir en Google Maps <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="rsvp" aria-labelledby="rsvp-heading">
+        <div class="rsvp-heading"><p class="small-label">POR FAVOR, RESPONDE</p><h2 id="rsvp-heading">¿Nos acompañas?</h2><p>Nos hará mucha ilusión celebrar contigo.</p></div>
+        <label class="name-label" for="guest-input">Tu nombre y apellido</label>
+        <input id="guest-input" class="name-input" type="text" name="name" maxlength="100" autocomplete="name" placeholder="Escribe tu nombre" required>
+        <div class="rsvp-buttons">
+          <button id="yes-button" class="rsvp-button yes-button" type="button"><span aria-hidden="true">♥</span> ¡Sí, ahí estaré!</button>
+          <button id="no-button" class="rsvp-button no-button" type="button"><span aria-hidden="true">♡</span> Esta vez no podré</button>
+        </div>
+        <p id="rsvp-message" class="rsvp-message" aria-live="polite"></p>
+      </section>
+
+      <footer class="invite-footer"><span>Con mucho cariño,</span><strong>Madeleine y Katerin</strong></footer>
+    </section>
+
+    <dialog class="response-dialog" id="decline-dialog" aria-labelledby="decline-title">
+      <div class="dialog-content">
+        <span class="dialog-flower" aria-hidden="true">✿</span>
+        <p class="small-label">RESPUESTA RECIBIDA</p>
+        <h2 id="decline-title">Gracias por avisar</h2>
+        <p>Qué pena que no puedas acompañarnos. ¡Esperamos verte pronto!</p>
+        <button class="dialog-close" id="decline-close" type="button">Cerrar</button>
+      </div>
+    </dialog>
+    <p class="page-note">Hecho con cariño <span aria-hidden="true">♥</span></p>
+  </main>
+</body>
+</html>
