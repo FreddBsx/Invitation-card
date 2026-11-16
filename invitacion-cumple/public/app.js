@@ -17,7 +17,7 @@ async function loadEvent() {
     
   if (mapQuery) {
     const encoded = encodeURIComponent(mapQuery);
-    const embedUrl = `https://google.com{encoded}&z=16&output=embed`;
+    const embedUrl = `https://maps.google.com/maps?q=${encoded}&z=16&output=embed`;
     byId('map-preview-frame').src = embedUrl;
     byId('map-empty').hidden = true;
     if (!mapUrl) mapUrl = `https://google.com{encoded}`;
